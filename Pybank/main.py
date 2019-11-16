@@ -2,14 +2,15 @@ import csv
 import os
 
 # create file path and save as file
-file = os.path.join( 'Resources', 'budget_data.csv')
+file = os.path.join('Resources', 'budget_data.csv')
 
 #emply lists for month and revenue data
 months = []
 revenue = []
 #read csv and parse data into lists
 #revenue list will be list of integers
-with open(file, 'r') as csvfile:
+    
+with open(file, 'r') as csvfile :
     csvread = csv.reader(csvfile)
 
     next(csvread, None)
@@ -18,9 +19,8 @@ with open(file, 'r') as csvfile:
         months.append(row[0])
         revenue.append(int(row[1]))
 
-#find total months
-total_months = len(months)
 
+total_months = len(months)
 #create greatest increase, decrease variables and set them equal to the first revenue entry
 #set total revenue = 0 
 greatest_inc = revenue[0]
